@@ -252,7 +252,7 @@ def U_from_theta(theta, N_qubits,l):
 
 	
 	
-	return cirq.unitary(crct)
+	return crct
 
 def num_parameters(n,l):
 	global params_per_rot
