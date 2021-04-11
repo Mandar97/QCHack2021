@@ -45,13 +45,13 @@ def matrix_to_sycamore_operations(target_qubits: List[cirq.GridQubit], matrix: n
         else :
             l,theta = optimization_routine(matrix)
             #print(cirq.unitary(U_from_theta(theta[0:-1], len(target_qubits), l)))
-            return cirq.unitary(U_from_theta(theta[0:-1], len(target_qubits), l)).all_operations(), []
+            return U_from_theta(theta[0:-1], len(target_qubits), l).all_operations(), []
         
     #3+ QUBITS
     elif 2 < len(target_qubits) < 5:
         #else :
         l,theta = optimization_routine(matrix)
-        return cirq.unitary(U_from_theta(theta[0:-1], len(target_qubits), l)).all_operations(), []
+        return U_from_theta(theta[0:-1], len(target_qubits), l).all_operations(), []
     
     else:
         return [], []
